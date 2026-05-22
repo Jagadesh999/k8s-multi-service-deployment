@@ -1,0 +1,44 @@
+name: Manual Deployment Pipeline
+
+on:
+
+  workflow_dispatch:
+
+    inputs:
+
+      environment:
+
+        description: "Select Environment"
+
+        required: true
+
+        type: choice
+
+        options:
+          - DEV
+          - INT
+          - PROD
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ inputs.environment }}
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Display Environment
+        run: |
+          echo "Selected Environment is:"
+          echo "${{ inputs.environment }}"
+
+      - name: Deploy Application
+        run: |
+          echo "Deploying Application to ${{ inputs.environment }}"
+          echo "Deployment Success"

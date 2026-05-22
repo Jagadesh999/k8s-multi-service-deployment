@@ -1,0 +1,1 @@
+print("K8s Multi Service Deployment Success")
