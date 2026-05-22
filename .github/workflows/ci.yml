@@ -1,4 +1,4 @@
-name: Kubernetes CI Pipeline
+name: Enterprise DevOps Pipeline
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
 jobs:
 
   build:
+
+    name: BUILD STAGE
 
     runs-on: ubuntu-latest
 
