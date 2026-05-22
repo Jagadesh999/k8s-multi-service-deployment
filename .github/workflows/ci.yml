@@ -3,7 +3,7 @@ name: Kubernetes CI Pipeline
 on:
   push:
     branches:
-      - feature/*
+      - main
 
 jobs:
 
@@ -16,5 +16,5 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Print Success
-        run: echo "Pipeline Triggered Successfully"
+      - name: Print Message
+        run: echo "Main Branch Pipeline Triggered"
